@@ -26,7 +26,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
     client.messages
       .create({
         body: 'Your message goes here',
-        from: 'YOUR_TWILIO_PHONE_NUMBER',
+        from: process.env.YOUR_TWILIO_PHONE_NUMBER,
         to: phoneNumber
       })
       .then((message) => console.log(`Message sent to ${message.to}`))
